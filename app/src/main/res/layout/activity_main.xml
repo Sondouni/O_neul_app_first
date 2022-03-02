@@ -21,6 +21,7 @@
             android:id="@+id/header_linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:gravity="center">
 
             <ImageView
@@ -30,21 +31,22 @@
                 android:src="@drawable/o_neul_logo">
 
             </ImageView>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_marginTop="30px"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘에서 점심/저녁 메뉴를 골라보세요!">
+
+            </TextView>
 
         </LinearLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_marginTop="30px"
-            android:background="#000000" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="오늘에서 점심/저녁 메뉴를 골라보세요!">
-
-        </TextView>
 
 
         <LinearLayout

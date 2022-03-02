@@ -1,10 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px"
+    android:paddingBottom="150px"
     tools:context=".FoodActivity">
+    <LinearLayout
+        android:id="@+id/header_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="100px"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:src="@drawable/o_neul_logo">
+
+        </ImageView>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="30px"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘에서 점심/저녁 메뉴를 골라보세요!">
+
+        </TextView>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/o_food">
+
+    </ImageView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="조리방법">
+
+                </TextView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <CheckBox
+                        android:id="@+id/check_f_cookery1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="구이류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="국류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="면류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="무침류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="밥류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="볶음류">
+
+                    </CheckBox>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/check_f_cookery7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="조림류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="죽류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="찌개류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="찜류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="탕류">
+                    </CheckBox>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/check_f_cookery13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="튀김류">
+
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_cookery14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="빵류">
+
+                    </CheckBox>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나라별">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/check_f_worlddiv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="한식">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_worlddiv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="양식">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_worlddiv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="일식">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_worlddiv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="중식">
+                    </CheckBox>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="재료별">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/check_igd1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="육류">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_igd2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="어류">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_igd3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="채소/야채">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_igd4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가공품">
+                    </CheckBox>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="혼밥여부">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/check_f_alone1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="O">
+                    </CheckBox>
+                    <CheckBox
+                        android:id="@+id/check_f_alone2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X">
+                    </CheckBox>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
 </LinearLayout>
+
