@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px"
+    android:paddingBottom="150px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodResultActivity">
+
+    <LinearLayout
+        android:id="@+id/header_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="100px"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:src="@drawable/o_neul_logo">
+
+        </ImageView>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="30px"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘에서 점심/저녁 메뉴를 골라보세요!">
+
+        </TextView>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/o_food">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
