@@ -20,10 +20,21 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.o_neul_first.common.Const;
 import com.example.o_neul_first.common.CurLocation;
+import com.example.o_neul_first.connection.kmap.KmapSV;
+import com.example.o_neul_first.connection.kmap.KmapService;
 import com.example.o_neul_first.models.foodmodels.FoodVO;
+import com.example.o_neul_first.models.jmtmodels.Place;
+import com.example.o_neul_first.models.jmtmodels.ResultSearchKeyword;
 
 import net.daum.mf.map.api.MapView;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class FoodResultActivity extends AppCompatActivity {
@@ -56,7 +67,13 @@ public class FoodResultActivity extends AppCompatActivity {
         text_result.setText("오늘은 " + vo.getF_nm() + " 어떠세요?");
 
         CurLocation curLocation = new CurLocation(FoodResultActivity.this);
-        text_result.setText(curLocation.getLatitude()+" "+curLocation.getLongitude());
+
+        searchKeyword(vo.getF_nm(),curLocation.getLongitude()+"",curLocation.getLatitude()+"");
+
+
+
+
+
 
         MapView mapView = new MapView(this);
 
@@ -64,12 +81,28 @@ public class FoodResultActivity extends AppCompatActivity {
         mapViewContainer.addView(mapView);
 
     }
+    private void searchKeyword(String keyword,String x,String y){
+        KmapSV.getApiClient().getSearchKeywordbyCurloca(Const.KAKAOMAP_APIKEY,"맛집",x,y,"FD6","5000").enqueue(new Callback<ResultSearchKeyword>() {
+            @Override
+            public void onResponse(Call<ResultSearchKeyword> call, Response<ResultSearchKeyword> response) {
+                ResultSearchKeyword resultSearchKeyword = response.body();
+                List<Place> places = resultSearchKeyword.getDocuments();
+            }
+
+            @Override
+            public void onFailure(Call<ResultSearchKeyword> call, Throwable t) {
+
+            }
+        });
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int permsRequestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grandResults) {
 
+        super.onRequestPermissionsResult(permsRequestCode, permissions, grandResults);
         if (permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length == REQUIRED_PERMISSIONS.length) {
 
             // 요청 코드가 PERMISSIONS_REQUEST_CODE 이고, 요청한 퍼미션 개수만큼 수신되었다면

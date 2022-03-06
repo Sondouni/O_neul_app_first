@@ -9,9 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class KmapSV {
     private static final String BASE_URL = "https://dapi.kakao.com/";
     private static Retrofit retrofit;
+    private static KmapService service;
 
-    public static Retrofit getApiClient()
-    {
+    public static KmapService getApiClient() {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -22,9 +22,10 @@ public class KmapSV {
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
+            service = retrofit.create(KmapService.class);
         }
 
-        return retrofit;
+        return service;
     }
 
 }
